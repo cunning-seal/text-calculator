@@ -1,10 +1,6 @@
 from tkinter import *
 
-
 class ClientAppGUI:
-    """
-    Класс GUI клиентского приложения
-    """
     def __init__(self, network):
 
         def count_callback(expr):
@@ -19,6 +15,7 @@ class ClientAppGUI:
             if resp:
                 result_field.delete(1.0, END)
                 result_field.insert(1.0, resp)
+
 
         window = Tk()
 
@@ -35,7 +32,7 @@ class ClientAppGUI:
         result_field.pack()
 
         # конфигурация окна
-        window.title("Text calculator")
+        window.title("Текстовый калькулятор")
         w = window.winfo_screenwidth()  # ширина экрана
         h = window.winfo_screenheight()  # высота экрана
         w = w // 2  # середина экрана
@@ -43,12 +40,9 @@ class ClientAppGUI:
         w = w - 200  # смещение от середины
         h = h - 200
         window.geometry('400x400+{}+{}'.format(w, h))
+        # window.protocol("WM_DELETE_WINDOW", on_close_window)
 
         self.window = window
 
     def install(self):
-        """
-        Запуск модуля в приложении
-        :return: None
-        """
         self.window.mainloop()

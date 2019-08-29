@@ -2,9 +2,6 @@ import socket
 
 
 class ClientAppNetwork:
-    """
-    Класс сетевого модуля клиентского приложения
-    """
     def __init__(self, port, server_ip):
         addr = server_ip.split(":")
         self.server_addr = addr[0], int(addr[1])
@@ -36,13 +33,6 @@ class ClientAppNetwork:
         return True
 
     def send_to_server(self, data: str) -> str or None:
-        """
-        Отправка выражения на сервер
-        :param data: выражение
-        :type data: str
-        :return: ответ сервера
-        :rtype: str or None
-        """
         if self.socket:
             try:
                 self.socket.send(data.encode())

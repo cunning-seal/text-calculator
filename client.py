@@ -7,8 +7,6 @@ if __name__ == '__main__':
     port = 8000
     server_ip = 'localhost:8001'
     valid_args = True
-
-    # определение порта запуска клиента и ip адреса сервера
     try:
         port_index = run_args.index('-p')
         try:
@@ -33,7 +31,7 @@ if __name__ == '__main__':
             valid_args = False
     except ValueError:
         pass
-    # запуск клиента
+
     if valid_args:
         c = ClientApp(port, server_ip)
         c.run()
